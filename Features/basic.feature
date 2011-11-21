@@ -4,8 +4,9 @@ Feature: Product Fulfillment
   I_need_to_be_able_to manage fulfillment 
 
 Background:
-  Given I create a fulfillment order on a product
+  Given I create a fulfillment on a product
 
+# this is basically creation of service.
 Scenario: init fulfillment status
    Then I should see fulfillment order of this product initialized
 
