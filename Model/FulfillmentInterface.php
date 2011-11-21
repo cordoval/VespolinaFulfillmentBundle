@@ -15,5 +15,7 @@ use Vespolina\FulfillmentBundle\Model\FulfillmentInterface;
  */
 interface FulfillmentInterface
 {
+    function setStatus($status);
 
+    function getStatus();
 }

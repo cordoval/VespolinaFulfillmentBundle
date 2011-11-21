@@ -38,16 +38,17 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
 //    }
 //
 
+      protected $fulfillment;
+      protected $fm;
+    
       /**
         * @Given /^I create a fulfillment on a product$/
         */
        public function iCreateAFulfillmentOnAProduct()
        {
-
            $product = new Product();
-           $fm = new FulfillmentManager('Vespolina\FulfillmentBundle\Features\Model\DummyFulfillment');
-           $fulfillment = $fm->createFulfillment($product);
-           assertInstanceOf('Vespolina\FulfillmentBundle\Model\FulfillmentInterface', $fulfillment);
+           $this->fm = new FulfillmentManager('Vespolina\FulfillmentBundle\Features\Model\DummyFulfillment');
+           $this->fulfillment = $this->fm->createFulfillment($product);
        }
 
        /**
@@ -55,7 +56,7 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
         */
        public function iShouldSeeFulfillmentOrderOfThisProductInitialized()
        {
-           throw new PendingException();
+            assertInstanceOf('Vespolina\FulfillmentBundle\Model\FulfillmentInterface', $this->fulfillment);
        }
 
        /**
@@ -63,7 +64,7 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
         */
        public function iSetStatusOfTheFulfillmentOrderTo($argument1)
        {
-           throw new PendingException();
+           $this->fulfillment->setStatus('Processing');
        }
 
        /**
@@ -71,8 +72,6 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
         */
        public function iShouldReadBackForStatus($argument1)
        {
-           throw new PendingException();
+           assertEquals('Processing', $this->fulfillment->getStatus());
        }
-
-
 }
