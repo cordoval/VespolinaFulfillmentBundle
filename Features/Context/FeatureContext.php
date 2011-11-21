@@ -10,6 +10,9 @@ use Behat\Behat\Context\ClosuredContextInterface,
 use Behat\Gherkin\Node\PyStringNode,
     Behat\Gherkin\Node\TableNode;
 
+use  Vespolina\FulfillmentBundle\Features\Model\Product;
+use  Vespolina\FulfillmentBundle\Features\Model\DummyFulfillment;
+use  Vespolina\FulfillmentBundle\Features\Model\FulfillmentManager;
 //
 // Require 3rd-party libraries here:
 //
@@ -36,11 +39,15 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
 //
 
       /**
-        * @Given /^I create a fulfillment order on a product$/
+        * @Given /^I create a fulfillment on a product$/
         */
-       public function iCreateAFulfillmentOrderOnAProduct()
+       public function iCreateAFulfillmentOnAProduct()
        {
-           
+
+           $product = new Product();
+           $fm = new FulfillmentManager('Vespolina\FulfillmentBundle\Features\Model\DummyFulfillment');
+           $fulfillment = $fm->createFulfillment($product);
+           assertInstanceOf('Vespolina\FulfillmentBundle\Model\FulfillmentInterface', $fulfillment);
        }
 
        /**

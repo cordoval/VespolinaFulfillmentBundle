@@ -17,12 +17,7 @@
         <field name="createdAt" fieldName="createdAt" type="date" />
 
         <field name="updatedAt" fieldName="updatedAt" type="date" />
-
-        <lifecycle-callbacks>
-            <lifecycle-callback type="prePersist" method="incrementCreatedAt" />
-            <lifecycle-callback type="preUpdate" method="incrementUpdatedAt" />
-        </lifecycle-callbacks>
-
+        
     </mapped-superclass>
 
 </doctrine-mongo-mapping>
