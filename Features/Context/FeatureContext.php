@@ -74,4 +74,77 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
        {
            assertEquals('Processing', $this->fulfillment->getState());
        }
+
+       /**
+        * @When /^I get the fulfillment service$/
+        */
+       public function iGetTheFulfillmentService()
+       {
+           throw new PendingException();
+       }
+
+       /**
+        * @Given /^I invoke to crate a Fulfillment Order$/
+        */
+       public function iInvokeToCrateAFulfillmentOrder()
+       {
+           throw new PendingException();
+       }
+
+       /**
+        * @Then /^I get a confirmation that Fulfillment Order was created$/
+        */
+       public function iGetAConfirmationThatFulfillmentOrderWasCreated()
+       {
+           throw new PendingException();
+       }
+
+       /**
+        * @Given /^I invoke to display fulfillment preview for a given order$/
+        */
+       public function iInvokeToDisplayFulfillmentPreviewForAGivenOrder()
+       {
+           throw new PendingException();
+       }
+
+       /**
+        * @Then /^I get a information about possible fulfillment$/
+        */
+       public function iGetAInformationAboutPossibleFulfillment()
+       {
+           throw new PendingException();
+       }
+
+       /**
+        * @Given /^I invoke to get a specific Fulfillment Order$/
+        */
+       public function iInvokeToGetASpecificFulfillmentOrder()
+       {
+           throw new PendingException();
+       }
+
+       /**
+        * @Then /^I get a all information about this specific Fulfillment Order$/
+        */
+       public function iGetAAllInformationAboutThisSpecificFulfillmentOrder()
+       {
+           throw new PendingException();
+       }
+
+       /**
+        * @Given /^I invoke to cancel a Fulfillment Order$/
+        */
+       public function iInvokeToCancelAFulfillmentOrder()
+       {
+           throw new PendingException();
+       }
+
+       /**
+        * @Then /^I get a confirmation that the Order was cancelled$/
+        */
+       public function iGetAConfirmationThatTheOrderWasCancelled()
+       {
+           throw new PendingException();
+       }
+
 }
