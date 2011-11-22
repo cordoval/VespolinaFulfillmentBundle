@@ -10,9 +10,9 @@ Scenario: init fulfillment status
    Then I should see fulfillment order of this product initialized
 
 Scenario: set fulfillment status
-   When I set status of the fulfillment order to "processing"
-   Then I should read back "processing" for status
+   When I set state of the fulfillment order to "processing"
+   Then I should read back "processing" for state
 
 Scenario: read fulfillment status
-   When I set status of the fulfillment order to "fulfilled"
-   Then I should read back "fulfilled" for status
+   When I set state of the fulfillment order to "fulfilled"
+   Then I should read back "fulfilled" for state
