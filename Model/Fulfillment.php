@@ -6,13 +6,13 @@ use Vespolina\FulfillmentBundle\Model\FulfillmentInterface;
 
 abstract class Fulfillment implements FulfillmentInterface
 {
-    private $status;
+    private $state;
 
-    public function setStatus($status) {
-        $this->status = $status;
+    public function setState($state) {
+        $this->state = $state;
     }
 
-    public function getStatus() {
-        return $this->status;
+    public function getState() {
+        return $this->state;
     }
 }
