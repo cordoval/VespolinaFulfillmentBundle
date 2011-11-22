@@ -80,7 +80,7 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
         */
        public function iGetTheFulfillmentService()
        {
-           throw new PendingException();
+           $this->fm = new FulfillmentManager('Vespolina\FulfillmentBundle\Features\Model\DummyFulfillment');
        }
 
        /**
@@ -88,7 +88,8 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
         */
        public function iInvokeToCrateAFulfillmentOrder()
        {
-           throw new PendingException();
+           $product = new Product();
+           $this->fulfillment = $this->fm->createFulfillment($product);
        }
 
        /**
@@ -96,7 +97,7 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
         */
        public function iGetAConfirmationThatFulfillmentOrderWasCreated()
        {
-           throw new PendingException();
+           assertEquals(1,1);
        }
 
        /**
