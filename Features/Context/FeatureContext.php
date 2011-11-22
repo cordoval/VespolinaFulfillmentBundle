@@ -60,18 +60,18 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
        }
 
        /**
-        * @When /^I set status of the fulfillment order to "([^"]*)"$/
+        * @When /^I set state of the fulfillment order to "([^"]*)"$/
         */
-       public function iSetStatusOfTheFulfillmentOrderTo($argument1)
+       public function iSetStateOfTheFulfillmentOrderTo($argument1)
        {
-           $this->fulfillment->setStatus('Processing');
+           $this->fulfillment->setState('Processing');
        }
 
        /**
-        * @Then /^I should read back "([^"]*)" for status$/
+        * @Then /^I should read back "([^"]*)" for state$/
         */
-       public function iShouldReadBackForStatus($argument1)
+       public function iShouldReadBackForState($argument1)
        {
-           assertEquals('Processing', $this->fulfillment->getStatus());
+           assertEquals('Processing', $this->fulfillment->getState());
        }
 }
