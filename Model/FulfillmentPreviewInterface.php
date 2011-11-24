@@ -13,6 +13,14 @@ namespace Vespolina\FulfillmentBundle\Model;
  */
 interface FulfillmentPreviewInterface
 {
+    private $shippingSpeedCategory;
+    private $isFulfillable;
+    private $estimatedShippingWeight;
+    private $estimatedFees;
+    private $fulfillmentPreviewShipments;
+    private $unfulfillablePreviewItems;
+    private $orderUnfulfillableReasons;
+
     function setState($state);
 
     function getState();
