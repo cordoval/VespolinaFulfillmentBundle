@@ -17,10 +17,10 @@ interface FulfillmentManagerInterface
 {
     /**
      * Create a Fulfillment instance
-     * 
+     * @arg $product
      * @return Vespolina\FulfillmentBundle\Model\FulfillmentInterface
      */
-    function createFulfillment();
+    function createFulfillment($product);
 
     /**
      * Find a fulfillment collection by the criteria

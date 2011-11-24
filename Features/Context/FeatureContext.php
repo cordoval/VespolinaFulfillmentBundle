@@ -40,15 +40,16 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
 
       protected $fulfillment;
       protected $fm;
+      protected $product;
     
       /**
         * @Given /^I create a fulfillment on a product$/
         */
        public function iCreateAFulfillmentOnAProduct()
        {
-           $product = new Product();
+           $this->product = new Product();
            $this->fm = new FulfillmentManager('Vespolina\FulfillmentBundle\Features\Model\DummyFulfillment');
-           $this->fulfillment = $this->fm->createFulfillment($product);
+           $this->fulfillment = $this->fm->createFulfillment($this->product);
        }
 
        /**
@@ -84,12 +85,12 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
        }
 
        /**
-        * @Given /^I invoke to crate a Fulfillment Order$/
+        * @Given /^I invoke to create a Fulfillment Order$/
         */
-       public function iInvokeToCrateAFulfillmentOrder()
+       public function iInvokeToCreateAFulfillmentOrder()
        {
-           $product = new Product();
-           $this->fulfillment = $this->fm->createFulfillment($product);
+           $this->product = new Product();
+           $this->fulfillment = $this->fm->createFulfillment($this->product);
        }
 
        /**
@@ -97,7 +98,7 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
         */
        public function iGetAConfirmationThatFulfillmentOrderWasCreated()
        {
-           assertEquals(1,1);
+           assertEquals($this->fulfillment->getProduct(), $this->product );
        }
 
        /**

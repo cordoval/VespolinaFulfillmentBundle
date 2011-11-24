@@ -18,4 +18,8 @@ interface FulfillmentInterface
     function setState($state);
 
     function getState();
+
+    function getProduct();
+
+    function setProduct($product);
 }
