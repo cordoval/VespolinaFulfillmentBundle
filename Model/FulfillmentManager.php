@@ -30,9 +30,9 @@ abstract class FulfillmentManager implements FulfillmentManagerInterface
      *
      * @return Vespolina\FulfillmentBundle\Model\FulfillmentInterface
      */
-    public function createFulfillment()
+    public function createFulfillment($product)
     {
-        return new $this->fulfillmentClass;
+        return new $this->fulfillmentClass($product);
     }
 
 }

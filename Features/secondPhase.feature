@@ -8,7 +8,7 @@ Background:
    When I get the fulfillment service
 
 Scenario: create fulfillment order
-    And I invoke to crate a Fulfillment Order
+    And I invoke to create a Fulfillment Order
    Then I get a confirmation that Fulfillment Order was created
 
 Scenario: get fulfillment order preview

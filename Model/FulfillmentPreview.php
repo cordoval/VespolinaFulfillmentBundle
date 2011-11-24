@@ -2,9 +2,9 @@
 
 namespace Vespolina\FulfillmentBundle\Model;
 
-use Vespolina\FulfillmentBundle\Model\FulfillmentInterface;
+use Vespolina\FulfillmentBundle\Model\FulfillmentPreviewInterface;
 
-abstract class Fulfillment implements FulfillmentInterface
+abstract class FulfillmentPreview implements FulfillmentPreviewInterface
 {
     private $state;
     private $product;

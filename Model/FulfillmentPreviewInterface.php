@@ -11,7 +11,7 @@ namespace Vespolina\FulfillmentBundle\Model;
  * @author Richard Shank <develop@zestic.com>
  * @author Luis Cordova <cordoval@gmail.com>
  */
-interface FulfillmentInterface
+interface FulfillmentPreviewInterface
 {
     function setState($state);
 
